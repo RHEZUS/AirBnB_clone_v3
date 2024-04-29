@@ -20,6 +20,7 @@ def teardown_db(exception):
     """
     storage.close()
 
+
 @app.errorhandler(404)
 def not_found(error):
     """ 404 Error
@@ -29,6 +30,7 @@ def not_found(error):
         description: a resource was not found
     """
     return make_response(jsonify({'error': "Not found"}), 404)
+
 
 app.config['SWAGGER'] = {
     'title': 'AirBnB clone Restful API',
